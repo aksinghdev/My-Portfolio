@@ -23,6 +23,7 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:5173",
+  "https://my-portfolio-two-iota-99.vercel.app"
 ];
 // middleware
 app.use(express.json())
