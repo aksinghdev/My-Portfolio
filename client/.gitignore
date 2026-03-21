@@ -44,5 +44,5 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# VS Code
+# VS Codeg
 .vscode/

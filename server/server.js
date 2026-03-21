@@ -53,7 +53,7 @@ app.use("/api/v1/user",userRautes)
 app.get("/",(req , res) =>{
     return res.json({
         success: true,
-        messge: "Your Portfolio server is running and you are inside the default route........."
+        messge: "Congratulation Abhishek Your Portfolio server is running and you are inside the default route... "
     });
 });
 
