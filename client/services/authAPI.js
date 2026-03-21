@@ -20,17 +20,3 @@ export const loginAPI = async(data)=>{
 
 }
 
-// // services/authService.js
-// import { apiConnector } from "./apiConnector";
-// import { ENDPOINTS } from "./apis";
-
-// export const logoutService = async () => {
-//   const response = await apiConnector(
-//     "POST",
-//     ENDPOINTS.LOGOUT,
-//     null,
-//     null,
-//     null
-//   );
-//   return response;
-// };

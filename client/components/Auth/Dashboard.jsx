@@ -9,10 +9,10 @@
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
-import { apiConnector } from "../api/apiConnector";
-import { dashboardEndpoints } from "../api/apis";
-import ProjectGallery from "../components/gallary/ProjectGallery"; 
-import LiveClock from "./Liveclock";
+import { apiConnector } from "../../api/apiConnector";
+import { dashboardEndpoints } from "../../api/apis";
+import ProjectGallery from "../gallary/ProjectGallery"; 
+import LiveClock from "./LiveClock";
 
 // resume link
 const RESUME_LINK = "https://drive.google.com/file/d/1EFhs6RSAamdKPl68mnxevixv3CvYOpS2/view?usp=drive_link";

@@ -5,15 +5,16 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Navbar from "../components/Navbar";
-import Home from "../components/Home";
-import Skills from "../components/Skills";
-import Contact from "../components/Contact";
-import About from "../components/About";
-import Education from "../components/Education";
+import Home from "../pages/Home";
+import Skills from "../pages/Skills";
+import Contact from "../pages/Contact";
+import About from "../pages/About";
+import Education from "../pages/Education";
+import Projects from "../pages/Projects";
 import Login from "../components/Auth/Login"
 import Signup from "../components/Auth/Signup"
 import ProtectedRoute from "../components/ProtectedRoute";
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../components/Auth/Dashboard";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About/>} />
+          <Route path="/projects" element={<Projects/>} />
           <Route path="/education" element={<Education/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />

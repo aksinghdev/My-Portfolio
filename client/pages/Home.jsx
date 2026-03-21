@@ -1,28 +1,21 @@
+import React from "react";
+// import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import About from "./About";
+import Projects from "./Projects";
+import HomeContact from "../components/HomeContact";
+import Footer from "../components/Footer";
 
-import Hero from "../components/Hero"
-import About from "../components/About"
-import Services from "../components/Services"
-import Skills from "../components/Skills"
-import Contact from "../components/Contact"
-
-export default function Home(){
-
-  return(
-
-    <div>
-
-      <Hero/>
-
+export default function Home() {
+  return (
+    <div className="scroll-smooth">
+      {/* <Navbar /> */}
+      <Hero />
       <About/>
-
-      <Services/>
-
-      <Skills/>
-
-      <Contact/>
+      <Projects/>
+      <HomeContact/>
+      <Footer/>
 
     </div>
-
-  )
-
+  );
 }

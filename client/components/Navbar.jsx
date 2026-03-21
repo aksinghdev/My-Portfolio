@@ -23,11 +23,16 @@ export default function Navbar() {
     },
     {
       id: "3",
+      link: "/projects",
+      title: "Projects"
+    },
+    {
+      id: "4",
       link: "/education",
       title: "Education"
     },
     {
-      id: "4",
+      id: "5",
       link: "/contact",
       title: "Contact Me"
     },
@@ -44,7 +49,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex mx-auto flex-row justify-between items-center">
-          <ul className="flex flex-row gap-x-5 items-center justify-center font-inter font-medium">
+          <ul className="flex flex-row gap-x-3 items-center justify-center font-inter font-medium">
             {
               navlink.map((item, index) => (
                 <li key={index}

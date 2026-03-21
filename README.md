@@ -1,4 +1,3 @@
-
 # 🚀 My Portfolio
 
 A full-stack developer portfolio with authentication system where users can sign up, log in, and explore projects with live demos and screenshots.
@@ -10,8 +9,8 @@ A full-stack developer portfolio with authentication system where users can sign
 - 🔐 **Authentication** — Secure Signup & Login with JWT
 - 📊 **Dashboard** — Personal dashboard after login
 - 🗂️ **Projects Section** — All projects listed in one place
-- 🌐 **Live Demo** — Click any project to view live demo
-- 📸 **Screenshots** — Preview screenshots for each project
+- 🌐 **Live Demo** — Click any project to view live demo in Dashboard project section
+- 📸 **Screenshots** — Preview screenshots for each project in Dashboard project Section
 - 📱 **Responsive Design** — Works on mobile, tablet & desktop
 
 ---
@@ -21,7 +20,6 @@ A full-stack developer portfolio with authentication system where users can sign
 **Frontend**
 - React.js
 - Tailwind CSS
-- Redux
 - React Router DOM
 
 **Backend**
@@ -40,26 +38,57 @@ A full-stack developer portfolio with authentication system where users can sign
 
 ```
 My-Portfolio/
-├── client/                 # Frontend (React)
+├── client/                   # Frontend (React)
+│   ├── components/           # Reusable components
+│   │   ├── Auth/             # Login & Signup components
+│   │   ├── gallary/          # Gallery components
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── HomeContact.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProjectGallary.jsx
+│   │   └── ProtectedRoute.jsx
+│   ├── pages/                # All pages
+│   ├── public/               # Static assets
+│   ├── redux/                # Redux store & slices (planned)
+│   ├── services/             # API calls
 │   ├── src/
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # All pages
-│   │   ├── redux/          # State management
-│   │   ├── services/       # API calls
-│   │   └── assets/         # Images & icons
-│   └── package.json
+│   │   ├── assets/           # Images & icons
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.cjs
+│   ├── tailwind.config.js
+│   └── vite.config.js
 │
-├── server/                 # Backend (Node.js)
-│   ├── config/             # DB & env config
-│   ├── controllers/        # Route logic
-│   ├── middleware/         # Auth middleware
-│   ├── models/             # MongoDB models
-│   ├── routes/             # API routes
-│   ├── utils/              # Helper functions
+├── server/                   # Backend (Node.js)
+│   ├── config/               # DB & env config
+│   ├── controllers/          # Route logic
+│   ├── mailtemplates/        # Email templates
+│   ├── middleware/           # Auth middleware
+│   ├── models/               # MongoDB models
+│   ├── routes/               # API routes
+│   ├── utils/                # Helper functions
+│   ├── .env
+│   ├── .gitignore
+│   ├── package.json
 │   └── server.js
 │
+├── .env
+├── .gitignore
+├── package.json
 └── README.md
 ```
+
+---
+
+## 🔮 Planned Features
+
+- 🔄 **Redux State Management** — Global state handling with Redux Toolkit & slices *(Coming Soon)*
 
 ---
 
@@ -108,6 +137,7 @@ npm run dev
 
 - GitHub: [@aksinghdev](https://github.com/aksinghdev)
 - Email: krabhi1452@gmail.com
+- Phone: +91 9162638828
 
 ---
 
