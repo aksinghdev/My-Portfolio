@@ -1,0 +1,20 @@
+
+
+# Dependencies
+node_modules/
+
+# Environment variables — SECRETS HAIN, KABHI PUSH MAT KARO
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# VS Code
+.vscode/
