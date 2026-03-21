@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 
 export const auth = (req,res,next)=>{
 
-  const token = req.cookies.token
+  const token = req.cookies.token || req.headers.authorization?.split(" ")[1]
   console.log("inside middleware token",token);
   if(!token){
 
