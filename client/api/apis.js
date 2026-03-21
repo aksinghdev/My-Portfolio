@@ -2,9 +2,7 @@
 
 
 
-// const BASE_URL = process.env.PORTFOLIO_BASE_URL
-// const BASE_URL = "http://localhost:3600/api/v1";
-const BASE_URL = "https://my-portfolio-backend-bc3o.onrender.com";
+const BASE_URL = process.env.VITE_BASE_URL;
 
 console.log("base url", BASE_URL);
 
