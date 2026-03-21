@@ -48,7 +48,7 @@
 import React, { useState, useEffect } from "react";
 
 
-import pic from "../src/assets/image.jpg";
+// import pic from "../src/assets/image.jpg";
 
 const roles = ["MERN Stack Developer", "Frontend Developer", "React Enthusiast","Full Stack Developer","JS Developer","Backend Developer"];
 
@@ -57,6 +57,11 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [blink, setBlink] = useState(true);
+
+  const pic = "https://res.cloudinary.com/drssmbf2p/image/upload/v1774083397/akimg_htvyki.jpg"
+  // const pic = "https://res.cloudinary.com/drssmbf2p/image/upload/v1774083247/resized__imresizer_90kb_nkfqt1.jpg"
+  // const pic = ""
+  
 
   // Typing effect
   useEffect(() => {
