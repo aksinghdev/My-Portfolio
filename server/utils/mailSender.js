@@ -45,19 +45,18 @@
 // }
 
 
+import SibApiV3Sdk from "@getbrevo/brevo";
 
-import * as brevo from "@getbrevo/brevo";
-
-const apiInstance = new brevo.TransactionalEmailsApi();
+const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();  
 apiInstance.setApiKey(
-  brevo.TransactionalEmailsApiApiKeys.apiKey,
+  SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,           
   process.env.BREVO_API_KEY
 );
 
 export const mailSender = async(email, title, body) => {
   try {
 
-    const sendSmtpEmail = new brevo.SendSmtpEmail();
+    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();   
     sendSmtpEmail.to = [{ email: email }];
     sendSmtpEmail.sender = { 
       email: "a5ac09001@smtp-brevo.com",
