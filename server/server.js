@@ -86,7 +86,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import fetch from "node-fetch";
+import fetch from "node-fetch"; // import node fetch
 
 import { connectDB } from "./config/connectDB.js";
 import authRoutes from "./routes/authRoutes.js";
