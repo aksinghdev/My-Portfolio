@@ -63,3 +63,19 @@ app.get("/",(req , res) =>{
 app.listen(PORT,()=>{
   console.log(`Portfolio Server running at port :${PORT} `);
 })
+
+
+// for render server 
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
+setInterval(async () => {
+  try {
+    await fetch(`${process.env.RENDER_URL}/health`);
+    console.log("Server pinged — awake!");
+  } catch (err) {
+    // ignore
+  }
+}, 840000);

@@ -42,7 +42,9 @@ export default function Signup(){
       
       alert("Signup Failed");
       toast.error("Signup Failed")
+      console.log(responce.data.message);
       console.log(err);
+
     }finally{
       setLoading(false);
     }
