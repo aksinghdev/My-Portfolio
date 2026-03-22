@@ -17,8 +17,6 @@ export default function Signup(){
   const {register,reset,handleSubmit,formState:{errors}} = useForm();
 
   const onSubmit = async(data)=>{
-    
-    // console.log("data ",data);
     // console.log("signup api :",SIGNUP_API);
     try{
         setLoading(true);
@@ -35,14 +33,14 @@ export default function Signup(){
       }
 
       localStorage.setItem("token", responce.data.token);
-      // alert("Account Created");
+      alert("Account Created");
       reset();
       toast.success("Signup Successfull")
       navigate("/login");
 
     }catch(err){
       
-      // alert("Signup Failed");
+      alert("Signup Failed");
       toast.error("Signup Failed")
       console.log(err);
     }finally{

@@ -78,7 +78,7 @@ export const welcomeEmailTemplate = (name) => {
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="center" style="padding-bottom:32px;">
-                    <a href="#"
+                    <a href="https://my-portfolio-two-iota-99.vercel.app/login"
                       style="display:inline-block;background:linear-gradient(135deg,#22d3ee,#0891b2);
                       color:#ffffff;font-size:15px;font-weight:700;
                       text-decoration:none;padding:14px 36px;
@@ -195,17 +195,17 @@ export const welcomeEmailTemplate = (name) => {
               <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                 <tr>
                   <td style="padding:0 6px;">
-                    <a href="#" style="color:#22d3ee;font-size:12px;
+                    <a href="https://github.com/aksinghdev" style="color:#22d3ee;font-size:12px;
                       text-decoration:none;font-weight:600;">GitHub</a>
                   </td>
                   <td style="color:#e2e8f0;font-size:12px;">|</td>
                   <td style="padding:0 6px;">
-                    <a href="#" style="color:#22d3ee;font-size:12px;
+                    <a href="www.linkedin.com/in/abhishek-kumar-singh-dos" style="color:#22d3ee;font-size:12px;
                       text-decoration:none;font-weight:600;">LinkedIn</a>
                   </td>
                   <td style="color:#e2e8f0;font-size:12px;">|</td>
                   <td style="padding:0 6px;">
-                    <a href="#" style="color:#22d3ee;font-size:12px;
+                    <a href="https://my-portfolio-two-iota-99.vercel.app/" style="color:#22d3ee;font-size:12px;
                       text-decoration:none;font-weight:600;">Portfolio</a>
                   </td>
                 </tr>
