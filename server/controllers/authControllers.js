@@ -4,37 +4,52 @@ import jwt from "jsonwebtoken";
 import { mailSender } from "../utils/mailSender.js";
 import { welcomeEmailTemplate } from "../../server/mailtemplates/welcomeEmailTemplate.js";
 
-
 export const signup = async (req, res) => {
   const { name, email, password } = req.body;
   console.log("Fetched data : ", name, email, password);
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
-    return res.json({
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: "User already exists",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    // Email fail hone pe bhi signup complete ho
+    console.log("before mail send");
+    try {
+      await mailSender(
+        email,
+        "Welcome to My Portfolio",
+        welcomeEmailTemplate(name),
+      );
+    } catch (mailError) {
+      console.log("Email send failed:", mailError);
+    }
+
+    res.json({
+      success: true,
+      user,
+    });
+
+  } catch (err) {
+    console.log("Signup error:", err);
+    res.status(500).json({
       success: false,
-      message: "User already exists",
+      message: "Signup failed"
     });
   }
-
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const user = await User.create({
-    name,
-    email,
-    password: hashedPassword,
-  });
-
-  await mailSender(
-    email,
-    "Welcome to My Portfolio ",
-    welcomeEmailTemplate(name),
-  );
-
-  res.json({
-    success: true,
-    user,
-  });
 };
+
 
 export const login = async (req, res) => {
   const { email, password } = req.body;

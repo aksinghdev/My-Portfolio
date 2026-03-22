@@ -1,6 +1,12 @@
 
+
+// const LOCAL_URL = import.meta.env.LOCAL_BASE_URL;
+
 const URL = import.meta.env.VITE_BASE_URL;
+
+
 const BASE_URL = URL + "/api/v1"
+// const BASE_URL = LOCAL_URL + "/api/v1"
 
 console.log("base url", BASE_URL);
 
