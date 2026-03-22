@@ -2,42 +2,42 @@ import CountUp from "react-countup";
 
 export default function About() {
   return (
-    <section className="min-h-screen bg-[#0a1f2f] text-white px-10 lg:px-20 py-16">
+    <section className="min-h-screen bg-[#0a1f2f] w-full text-white px-10 lg:px-20 py-16">
 
       <h2 className="text-4xl font-bold mb-10">About Me</h2>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}
-        <div className="space-y-6 text-gray-300 leading-relaxed">
+        <div className=" md:space-y-6 text-gray-300 leading-relaxed ">
 
-          <p>
+          <p className=" my-3">
             Hello! I'm <span className="text-cyan-400 font-semibold">Abhishek Kumar Singh</span>, 
             a passionate <span className="text-cyan-400">Full Stack Developer</span> with 
             a strong background in both <span className="text-cyan-400">Electronics</span> 
             and <span className="text-cyan-400">Computer Science</span>.
           </p>
 
-          <p>
+          <p className=" my-3">
             I completed my <span className="text-cyan-400">Diploma in Electronics & Communication Engineering (2021)</span> 
             and recently graduated with a <span className="text-cyan-400">B.Tech in Computer Science (2025)</span>.
             My journey from electronics to software development has given me a 
             unique understanding of both hardware and software technologies.
           </p>
 
-          <p>
+          <p className=" my-3">
             I specialize in the <span className="text-cyan-400">MERN Stack</span> and 
             enjoy building scalable and modern web applications using 
             React, Node.js, Express and MongoDB.
           </p>
 
-          <p>
+          <p className=" my-3">
             During my learning journey, I have solved 
             <span className="text-cyan-400 font-semibold"> 500+ coding problems</span> 
             to improve my problem-solving skills and algorithmic thinking.
           </p>
 
-          <p>
+          <p className=" my-3">
             During my diploma, I also worked on electronics projects such as:
           </p>
 
@@ -46,7 +46,7 @@ export default function About() {
             <li>Mobile Controlled Car using Arduino UNO</li>
           </ul>
 
-          <p>
+          <p className=" my-3">
             Currently, I am focused on improving my full stack development 
             skills, OOPs concepts and practice DSA problems to improve my problem solving skills. And also preparing for professional software engineering roles.
           </p>
@@ -71,7 +71,7 @@ export default function About() {
         </div>
 
         {/* RIGHT SIDE STATS */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className=" w-full grid grid-cols-2 gap-6">
 
           <StatCard number={2} suffix="+" text="Projects Completed" />
 
@@ -95,20 +95,20 @@ export default function About() {
 
 function StatCard({ number, suffix = "", text }) {
   return (
-    <div className="bg-[#0c2a3a] p-8 rounded-xl shadow-lg text-center 
+    <div className="bg-[#0c2a3a] p-4 md:p-8 rounded-xl shadow-lg text-center 
     hover:scale-105 transition duration-300">
 
-      <h3 className="text-4xl font-bold text-cyan-400">
+      <h3 className="text-2xl md:text-4xl font-bold text-cyan-400 text-center">
 
         {number ? (
           <CountUp end={number} duration={3} suffix={suffix} />
         ) : (
-          ""
+          "" 
         )}
 
       </h3>
 
-      <p className="text-gray-300 mt-2">{text}</p>
+      <p className="text-gray-300 mt-2 text-center">{text}</p>
 
     </div>
   );

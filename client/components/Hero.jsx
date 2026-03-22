@@ -92,7 +92,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-10 overflow-hidden text-white"
+      className="relative flex flex-col text-center md:flex-row items-center justify-between min-h-screen px-10 overflow-hidden text-white"
     >
       {/* Dynamic Background Circles */}
       <div className="absolute w-full h-full -z-10 top-0 left-0 flex justify-center items-center">
@@ -105,7 +105,7 @@ export default function Hero() {
       <div className="max-w-xl space-y-4 z-10">
         <h3 className="text-2xl">Hello, It's Me</h3>
         <h1 className="text-5xl font-bold mt-2">Abhishek Kumar Singh</h1>
-        <h2 className="text-3xl mt-2 text-cyan-400">
+        <h2 className="text-3xl mt-2 text-cyan-400 h-[60px] md:min-h-fit">
           {text}
           <span className={`${blink ? "opacity-100" : "opacity-0"} inline-block`}>|</span>
         </h2>
@@ -118,11 +118,11 @@ export default function Hero() {
       </div>
 
       {/* Profile Image */}
-      <div className="relative mt-10 md:mt-0 z-10">
+      <div className="relative my-10 md:mt-0 z-10">
         <img
           src={pic}
           alt="Profile"
-          className="w-[350px] h-[350px] rounded-full border-4 border-cyan-400 shadow-[0_0_40px_cyan] object-cover"
+          className=" w-[200px] h-[200px] md:w-[350px] md:h-[350px] rounded-full border-4 border-cyan-400 shadow-[0_0_40px_cyan] object-cover"
         />
       </div>
     </section>

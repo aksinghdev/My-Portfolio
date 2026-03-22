@@ -29,7 +29,7 @@ export default function Education() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#081b29] text-white px-20 py-16">
+    <div className="min-h-screen bg-[#081b29] text-white md:px-20 md:py-16">
 
       <h1 className="text-4xl font-bold text-center mb-16">
         My <span className="text-cyan-400">Education</span>
@@ -39,9 +39,9 @@ export default function Education() {
 
         {educationData.map((item, index) => (
 
-          <div key={index} className="mb-12 ml-8">
+          <div key={index} className=" mb-8 ml-5 md:mb-12 md:ml-8">
 
-            <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 mt-2"></div>
+            <div className="absolute w-5 h-5 bg-cyan-400 rounded-full -left-3 mt-1"></div>
 
             <p className="text-cyan-400 font-semibold">
               {item.year}
@@ -51,11 +51,11 @@ export default function Education() {
               {item.title}
             </h2>
 
-            <h3 className="text-gray-300">
+            <h3 className="text-gray-200 font-mono">
               {item.institute}
             </h3>
 
-            <p className="text-gray-400 mt-2">
+            <p className=" text-richblack-300 mt-2">
               {item.desc}
             </p>
 

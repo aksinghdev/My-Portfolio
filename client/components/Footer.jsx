@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="flex gap-5 text-xl">
 
             <a
-              href="https://github.com/"
+              href="https://github.com/aksinghdev"
               target="_blank"
               className="hover:text-cyan-400 hover:scale-110 transition"
             >
@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="www.linkedin.com/in/abhishek-kumar-singh-dos"
               target="_blank"
               className="hover:text-cyan-400 hover:scale-110 transition"
             >
@@ -56,7 +56,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://leetcode.com/"
+              href="https://leetcode.com/u/abhishek_kumar_singh_91/"
               target="_blank"
               className="hover:text-cyan-400 hover:scale-110 transition"
             >
