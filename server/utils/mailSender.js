@@ -45,7 +45,8 @@
 // }
 
 
-import brevo from "@getbrevo/brevo";
+// import brevo from "@getbrevo/brevo";
+import * as brevo from "@getbrevo/brevo";
 
 const apiInstance = new brevo.TransactionalEmailsApi();
 
