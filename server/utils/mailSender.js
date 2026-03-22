@@ -2,18 +2,32 @@ import nodemailer from "nodemailer"
 
 export const mailSender = async(email,title,body)=>{
   try{
-    const transporter = nodemailer.createTransport({
-      service:"gmail",
-      auth:{
-        user:process.env.MAIL_USER,
-        pass:process.env.MAIL_PASS
-      }
 
-    })
+    // through simple mail
+    // const transporter = nodemailer.createTransport({
+    //   service:"gmail",
+    //   auth:{
+    //     user:process.env.MAIL_USER,
+    //     pass:process.env.MAIL_PASS
+    //   }
+
+    // })
+
+
+    // by usin brevo
+    const transporter = nodemailer.createTransport({
+      host: "smtp-relay.brevo.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.BREVO_SMTP_USER,
+        pass: process.env.BREVO_SMTP_PASS,
+      },
+    });
 
     const info = await transporter.sendMail({
 
-      from: `"Portfolio"${process.env.MAIL_USER}`,
+      from: `"Portfolio"<${process.env.BREVO_SMTP_USER}>`,
       to:email,
       subject:title,
       html:body
