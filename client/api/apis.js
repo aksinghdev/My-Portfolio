@@ -1,4 +1,5 @@
 
+console.log("All env vars:", import.meta.env);
 
 // const LOCAL_URL = import.meta.env.VITE_LOCAL_BASE_URL;
 
