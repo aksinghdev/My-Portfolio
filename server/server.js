@@ -1,39 +1,112 @@
-import dotenv from "dotenv"
-// dotenv.config({ path: "./server/.env" });
+// import dotenv from "dotenv"
+// // dotenv.config({ path: "./server/.env" });
+// dotenv.config();
+
+// import express from "express"
+// import cors from "cors"
+// import cookieParser from "cookie-parser"
+
+// import { connectDB } from "./config/connectDB.js"
+// import authRoutes from "./routes/authRoutes.js"
+// import userRautes from "./routes/userRoutes.js"
+// // import contactRautes from "./routes/contactRoute.js"
+
+
+
+// const PORT = process.env.PORT || 3800;
+
+// const app = express()
+
+
+// connectDB();
+
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "http://localhost:3001",
+//   "http://localhost:5173",
+//   "https://my-portfolio-two-iota-99.vercel.app"
+// ];
+// // middleware
+// app.use(express.json())
+// app.use(cookieParser())
+// app.use(cors(
+//   {
+//     // origin : "http://localhost:3005",
+//     origin: function (origin, callback) {
+//     // Allow requests with no origin (like mobile apps or curl)
+//     if (!origin) return callback(null, true);
+//     if (allowedOrigins.includes(origin)) {
+//       return callback(null, true);
+//     } else {
+//       return callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// //   it use forauthorization headeres
+//     credentials: true,
+//     }
+// ))
+
+// // app routes
+// app.use("/api/v1/auth",authRoutes)
+// app.use("/api/v1/user",userRautes)
+// // app.use("/api/v1/auth",contactRautes)
+
+// // default routes
+// app.get("/",(req , res) =>{
+//     return res.json({
+//         success: true,
+//         messge: "Congratulation Abhishek Your Portfolio server is running and you are inside the default route... "
+//     });
+// });
+
+
+// app.listen(PORT,()=>{
+//   console.log(`Portfolio Server running at port :${PORT} `);
+// })
+
+
+// // for render server 
+
+// app.get("/health", (req, res) => {
+//   res.status(200).json({ status: "OK" });
+// });
+
+// setInterval(async () => {
+//   try {
+//     await fetch(`${process.env.RENDER_URL}/health`);
+//     console.log("Server pinged — awake!");
+//   } catch (err) {
+//     // ignore
+//   }
+// }, 840000);
+
+import dotenv from "dotenv";
 dotenv.config();
 
-import express from "express"
-import cors from "cors"
-import cookieParser from "cookie-parser"
+import express from "express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import fetch from "node-fetch";
 
-import { connectDB } from "./config/connectDB.js"
-import authRoutes from "./routes/authRoutes.js"
-import userRautes from "./routes/userRoutes.js"
-// import contactRautes from "./routes/contactRoute.js"
+import { connectDB } from "./config/connectDB.js";
+import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
-
-
+const app = express();
 const PORT = process.env.PORT || 3800;
 
-const app = express()
-
-
-connectDB();
+// middleware
+app.use(express.json());
+app.use(cookieParser());
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "http://localhost:3001",
   "http://localhost:5173",
   "https://my-portfolio-two-iota-99.vercel.app"
 ];
-// middleware
-app.use(express.json())
-app.use(cookieParser())
-app.use(cors(
-  {
-    // origin : "http://localhost:3005",
-    origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl)
+
+app.use(cors({
+  origin: function (origin, callback) {
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
@@ -41,41 +114,42 @@ app.use(cors(
       return callback(new Error("Not allowed by CORS"));
     }
   },
-//   it use forauthorization headeres
-    credentials: true,
-    }
-))
+  credentials: true,
+}));
 
-// app routes
-app.use("/api/v1/auth",authRoutes)
-app.use("/api/v1/user",userRautes)
-// app.use("/api/v1/auth",contactRautes)
+// routes
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
 
-// default routes
-app.get("/",(req , res) =>{
-    return res.json({
-        success: true,
-        messge: "Congratulation Abhishek Your Portfolio server is running and you are inside the default route... "
-    });
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "Server running" });
 });
-
-
-app.listen(PORT,()=>{
-  console.log(`Portfolio Server running at port :${PORT} `);
-})
-
-
-// for render server 
 
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK" });
 });
 
+// start server AFTER DB
+const startServer = async () => {
+  try {
+    await connectDB();
+
+    app.listen(PORT, () => {
+      console.log(`Server running at port ${PORT}`);
+    });
+
+  } catch (error) {
+    console.error("Startup Error:", error);
+  }
+};
+
+startServer();
+
+// keep alive
 setInterval(async () => {
   try {
     await fetch(`${process.env.RENDER_URL}/health`);
     console.log("Server pinged — awake!");
-  } catch (err) {
-    // ignore
-  }
+  } catch {}
 }, 840000);
+
