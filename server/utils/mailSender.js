@@ -46,20 +46,18 @@
 
 
 
+import { TransactionalEmailsApi, TransactionalEmailsApiApiKeys, SendSmtpEmail } from "@getbrevo/brevo";
 
-
-import * as SibApiV3Sdk from "@getbrevo/brevo";
-
-const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();  
+const apiInstance = new TransactionalEmailsApi();
 apiInstance.setApiKey(
-  SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey,           
+  TransactionalEmailsApiApiKeys.apiKey,
   process.env.BREVO_API_KEY
 );
 
 export const mailSender = async(email, title, body) => {
   try {
 
-    const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();   
+    const sendSmtpEmail = new SendSmtpEmail();
     sendSmtpEmail.to = [{ email: email }];
     sendSmtpEmail.sender = { 
       email: "a5ac09001@smtp-brevo.com",
@@ -72,7 +70,8 @@ export const mailSender = async(email, title, body) => {
     return info;
 
   } catch(error) {
-    console.log("Mailsender error, nodemailer failed", error);
+    console.log("Mailsender error failed", error);
     throw error;
   }
 }
+
