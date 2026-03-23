@@ -15,7 +15,8 @@ import ProjectGallery from "../gallary/ProjectGallery";
 import LiveClock from "./LiveClock";
 
 // resume link
-const RESUME_LINK = "https://drive.google.com/file/d/1EFhs6RSAamdKPl68mnxevixv3CvYOpS2/view?usp=drive_link";
+// const RESUME_LINK = "https://drive.google.com/file/d/1EFhs6RSAamdKPl68mnxevixv3CvYOpS2/view?usp=drive_link"
+const RESUME_LINK = "https://drive.google.com/file/d/15osRkyxC81qyHZurSPJdd_Ahl_aVJ5d2/view?usp=drive_link"
 
 // projects data
 const PROJECTS = [
