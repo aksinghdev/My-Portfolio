@@ -1,4 +1,5 @@
-const Contact = require("../models/Contact")
+
+import Contact from "../models/Contact"
 
 export const sendMessage = async(req,res)=>{
 
