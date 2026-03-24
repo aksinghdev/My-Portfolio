@@ -24,7 +24,7 @@ export default function Contact() {
       setLoading(true);
     try{
       const responce = await apiConnector(
-        "PUT",
+        "POST",
         CONTACT_API,
         data,
         null,
