@@ -39,10 +39,10 @@ export default function Contact() {
       navigate("/");
 
     }catch(err){
+      toast.error("Mssage sending Failed")
       console.log("Message not sent ",err)
       setLoading(false)
       console.log(responce?.data.message);
-      toast.error("Mssage sending Failed")
     }
 
   };
