@@ -80,7 +80,7 @@ export default function Contact() {
           {/* Optional Mobile */}
           <input
             placeholder="Mobile Number (optional)"
-            {...register("mobile")}
+            {...register("mobileNo")}
             className="p-3 rounded-md bg-gray-800 text-white
             focus:outline-none focus:ring-2 focus:ring-cyan-400"
           />

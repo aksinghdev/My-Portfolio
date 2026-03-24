@@ -1,6 +1,6 @@
 const Contact = require("../models/Contact")
 
-exports.sendMessage = async(req,res)=>{
+export const sendMessage = async(req,res)=>{
 
     const {name,email,mobileNo,subject,message} = req.body
 
