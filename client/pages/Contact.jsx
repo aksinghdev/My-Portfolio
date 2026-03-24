@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { apiConnector } from "../api/apiConnector";
 
 export default function Contact() {
 
@@ -13,18 +14,15 @@ export default function Contact() {
   const onSubmit = async(data)=>{
 
     try{
-
-      await axios.post(
-        "http://localhost:5000/api/contact",
-        data
-      );
-
-      alert("Message Sent Successfully 🚀");
+      const responce = await apiConnector(
+        "PUT",
+        
+      )
 
       reset();
 
     }catch(err){
-      alert("Something went wrong");
+      
     }
 
   };

@@ -36,14 +36,15 @@ export const signup = async (req, res) => {
       console.log("Email send failed:", mailError);
     }
 
-    res.json({
+    return res.status(200).json({
       success: true,
+      message : "Signup successful",
       user,
     });
 
   } catch (err) {
     console.log("Signup error:", err);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Signup failed"
     });

@@ -14,11 +14,12 @@ console.log("base url", BASE_URL);
 // auth login/signup
 
 export const authEndpoints = {
-    SIGNUP_API: BASE_URL + "/auth/signup",
-    LOGIN_API: `${BASE_URL}/auth/login`,
+    SIGNUP_API: BASE_URL + "/user/signup",
+    LOGIN_API: `${BASE_URL}/user/login`,
+    CONTACT_API: `${BASE_URL}/user/contact`,
 } 
 
 export const dashboardEndpoints ={
-    DASHBOARD_API : BASE_URL + "/user/dashboard",
+    DASHBOARD_API : BASE_URL + "/auth/dashboard",
 }
 

@@ -2,18 +2,28 @@ const Contact = require("../models/Contact")
 
 exports.sendMessage = async(req,res)=>{
 
- const {name,email,subject,message} = req.body
+    const {name,email,mobileNo,subject,message} = req.body
 
- const data = await Contact.create({
-  name,
-  email,
-  subject,
-  message
- })
-
- res.json({
-  success:true,
-  data
- })
-
+    try{
+        const person = await Contact.create(
+            name,
+            email,
+            mobileNo,
+            subject,
+            message,
+        )
+        const data = person; 
+        return res.status(200).json({
+            success : true,
+            message : "Message submited successfuly",
+            data,
+        });
+    }
+    catch(e){
+        console.error(e);
+        return res.status(500).json({
+            success : false,
+            message : "somthing went worng, message not sent"
+        });
+    }
 }

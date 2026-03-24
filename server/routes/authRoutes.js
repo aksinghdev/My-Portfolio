@@ -1,14 +1,26 @@
 import express from "express"
-import { signup,login } from "../controllers/authControllers.js"
 import { auth } from "../middleware/authMiddleware.js"
 
 const router = express.Router()
 
-router.post("/signup",signup)
+router.get("/dashboard",auth,(req,res)=>{
+  res.json({
+    success:true,
+    message:"Welcome to protected route",
+    user:req.user
+  })
 
-router.post("/login",login);
+})
 
+router.post("/logout", auth, (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logout successful" 
+  });
+});
 
 export default router
-
-
