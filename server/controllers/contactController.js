@@ -1,12 +1,13 @@
 
-import Contact from "../models/Contact"
+
+import Message from "../models/Message";
 
 export const sendMessage = async(req,res)=>{
 
     const {name,email,mobileNo,subject,message} = req.body
 
     try{
-        const person = await Contact.create(
+        const person = await Message.create(
             name,
             email,
             mobileNo,
