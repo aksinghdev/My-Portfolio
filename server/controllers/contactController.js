@@ -5,7 +5,7 @@ import Message from "../models/Message.js";
 export const sendMessage = async(req,res)=>{
 
     const {name,email,mobileNo,subject,message} = req.body
-
+    console.log("print get data ",name,email,subject,message);
     try{
         const person = await Message.create(
             name,
