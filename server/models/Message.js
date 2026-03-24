@@ -4,23 +4,23 @@ import mongoose from "mongoose";
 
 const messageSchema = new mongoose.Schema({
     name:{
-        type : "String",
+        type : String,
         required : true,
     },
     email:{
-        type : "String",
+        type : String,
         required : true,
     },
     mobileNo:{
-        type : "String",
+        type : String,
         // required : true,
     },
     subject:{
-        type : "String",
+        type : String,
         required : true,
     },
     message:{
-        type : "String",
+        type : String,
         required : true,
     },
 })
