@@ -1,6 +1,6 @@
 
 
-import Message from "../models/Message";
+import Message from "../models/Message.js";
 
 export const sendMessage = async(req,res)=>{
 
