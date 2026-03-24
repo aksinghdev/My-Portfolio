@@ -28,6 +28,7 @@ export default function Contact() {
         CONTACT_API,
         data,
         null,
+        null,
       )
       console.log("contact responce",responce);
       if(!responce?.data.success){

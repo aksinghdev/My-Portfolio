@@ -14,18 +14,18 @@ export const sendMessage = async(req,res)=>{
             subject,
             message,
         )
-        const data = person; 
+        // const data = person; 
         return res.status(200).json({
             success : true,
             message : "Message submited successfuly",
-            data,
+            person,
         });
     }
     catch(e){
-        console.error(e);
         return res.status(500).json({
             success : false,
             message : "somthing went worng, message not sent"
         });
+        console.error(e);
     }
 }
