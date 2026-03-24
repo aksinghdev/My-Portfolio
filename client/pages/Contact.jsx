@@ -1,8 +1,17 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { apiConnector } from "../api/apiConnector";
+import { userEndpoints } from "../api/apis";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import Spinner from "../components/Auth/Spinner";
 
 export default function Contact() {
+
+  const [loading, setLoading] = useState(false)
+  const { CONTACT_API} = userEndpoints;
+  const navigate = useNavigate();
 
   const {
     register,
@@ -12,17 +21,28 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = async(data)=>{
-
+      setLoading(true);
     try{
       const responce = await apiConnector(
         "PUT",
-        
+        CONTACT_API,
+        data,
+        null,
       )
-
+      console.log("contact responce",responce);
+      if(!responce?.data.success){
+        throw new Error(responce?.data.message) 
+      }
       reset();
+      setLoading(false);
+      toast.success("Your message submitted successfuly")
+      navigate("/");
 
     }catch(err){
-      
+      console.log("Message not sent ",err)
+      setLoading(false)
+      console.log(responce?.data.message);
+      toast.error("Mssage sending Failed")
     }
 
   };
@@ -119,7 +139,7 @@ export default function Contact() {
             shadow-[0_0_15px_rgba(34,211,238,0.6)]
             transition duration-300"
           >
-            Send Message
+            {loading ? <Spinner/> : "Send Message"}
           </button>
 
         </form>

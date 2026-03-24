@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 // import {useDispatch} from "react-redux";
 import { apiConnector } from "../../api/apiConnector";
-import { authEndpoints } from "../../api/apis";
+import { userEndpoints } from "../../api/apis";
 import { useState } from "react";
 import Spinner from "./Spinner";
 import toast from "react-hot-toast";
@@ -13,7 +13,7 @@ export default function Signup(){
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const {SIGNUP_API} = authEndpoints;
+  const {SIGNUP_API} = userEndpoints;
   const {register,reset,handleSubmit,formState:{errors}} = useForm();
 
   const onSubmit = async(data)=>{
@@ -33,14 +33,14 @@ export default function Signup(){
       }
 
       localStorage.setItem("token", responce.data.token);
-      alert("Account Created");
+      // alert("Account Created");
       reset();
       toast.success("Signup Successfull")
       navigate("/login");
 
     }catch(err){
       
-      alert("Signup Failed");
+      // alert("Signup Failed");
       toast.error("Signup Failed")
       console.log(responce.data.message);
       console.log(err);

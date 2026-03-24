@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { apiConnector } from "../../api/apiConnector";
-import { authEndpoints } from "../../api/apis";
+import { userEndpoints } from "../../api/apis";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -15,7 +15,7 @@ export default function Login(){
     try{
       const responce = await apiConnector(
         "POST",
-        authEndpoints.LOGIN_API,
+        userEndpoints.LOGIN_API,
         data,
         null,
         null,

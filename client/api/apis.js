@@ -13,7 +13,7 @@ console.log("base url", BASE_URL);
 
 // auth login/signup
 
-export const authEndpoints = {
+export const userEndpoints = {
     SIGNUP_API: BASE_URL + "/user/signup",
     LOGIN_API: `${BASE_URL}/user/login`,
     CONTACT_API: `${BASE_URL}/user/contact`,
