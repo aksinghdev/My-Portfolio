@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function HomeContact() {
 
   return (
-    <section className="bg-[#0a1f2f] text-white py-24 px-10 text-center">
+    <section id="homecontact" className="bg-[#0a1f2f] text-white py-24 px-10 text-center">
 
       {/* Heading */}
       <h2 className="text-4xl font-bold mb-6">

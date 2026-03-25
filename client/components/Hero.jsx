@@ -112,9 +112,12 @@ export default function Hero() {
         <p className="mt-4 text-gray-300">
           Passionate developer focused on building modern scalable web applications using MERN stack. I love building interactive UI & smooth UX.
         </p>
-        <button className="mt-6 bg-cyan-500 px-6 py-2 rounded-full shadow-lg hover:shadow-cyan-500 transition-all">
-          More About Me
-        </button>
+        <a href="#homecontact">
+          <button 
+            className="mt-6 bg-cyan-500 px-6 py-2 rounded-full shadow-lg hover:shadow-cyan-500 transition-all">
+            More About Me
+          </button>
+        </a>
       </div>
 
       {/* Profile Image */}
