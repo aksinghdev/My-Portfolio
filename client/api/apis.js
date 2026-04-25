@@ -22,4 +22,7 @@ export const userEndpoints = {
 export const dashboardEndpoints ={
     DASHBOARD_API : BASE_URL + "/auth/dashboard",
 }
+export const chatEndpoints ={
+    CHAT_API : BASE_URL + "/chat",
+}
 

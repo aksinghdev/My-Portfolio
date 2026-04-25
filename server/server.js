@@ -91,6 +91,7 @@ import fetch from "node-fetch"; // import node fetch
 import { connectDB } from "./config/connectDB.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js"
 
 const app = express();
 const PORT = process.env.PORT || 3800;
@@ -120,6 +121,7 @@ app.use(cors({
 // routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/chat", chatRoutes);
 
 app.get("/", (req, res) => {
   res.json({ success: true, message: "Server running" });
